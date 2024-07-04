@@ -3,7 +3,10 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background: url('background to site.avif') no-repeat center center fixed;
+    background-size: cover;
 }
+
 
 header {
     background: #333;
