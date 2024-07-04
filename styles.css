@@ -5,7 +5,7 @@ body {
     padding: 0;
     background: url('Designer (3).png') no-repeat center center fixed;
     background-size: cover;
-    color: #000; /* Set text color to black */
+    color: #000; /* Set text color to white */
 }
 
 header {
@@ -17,7 +17,7 @@ header {
 
 header h1 {
     margin: 0;
-    color: #000; /* Set text color to black */
+    color: #fff; /* Set text color to white */
 }
 
 nav ul {
@@ -31,13 +31,13 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #000; /* Set link text color to black */
+    color: #fff; /* Set link text color to white */
     text-decoration: none;
 }
 
 main {
     padding: 2rem;
-    color: #fff; /* Set main content text color to black */
+    color: #fff; /* Set main content text color to white */
 }
 
 section {
