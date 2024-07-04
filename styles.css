@@ -17,7 +17,7 @@ header {
 
 header h1 {
     margin: 0;
-    color: #fff; /* Set text color to white */
+    color: #fff; /* Set text color to black */
 }
 
 nav ul {
@@ -31,13 +31,13 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff; /* Set link text color to white */
+    color: #fff; /* Set link text color to black */
     text-decoration: none;
 }
 
 main {
     padding: 2rem;
-    color: #fff; /* Set main content text color to white */
+    color: #fff; /* Set main content text color to black */
 }
 
 section {
