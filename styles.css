@@ -1,7 +1,5 @@
  body {
-            background: lightblue url(
-"https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190417124305/250.png") 
-            no-repeat center fixed;
+            background: url("Designer (51).jpg") no-repeat center fixed;
         }
 header {
     background: none
