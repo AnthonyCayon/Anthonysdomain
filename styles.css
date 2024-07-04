@@ -1,20 +1,8 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-#stars
-#stars2
-#stars3
-#title
-  %span
-    PURE CSS
-  %br
-  %span
-    PARALLAX PIXEL STARS
-}
-
+ body {
+            background: lightblue url(
+"https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190417124305/250.png") 
+            no-repeat center fixed;
+        }
 header {
     background: none
     color: #fff;
