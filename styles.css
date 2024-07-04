@@ -1,5 +1,10 @@
-  header {
-    background: url('Designer (51).jpg') no-repeat center center fixed;
+ body {
+    background: url("Designer (51).jpg") no-repeat center fixed;
+    background-size: cover; /* Ensure the background image covers the entire page */
+}
+
+header {
+    background: none; /* Added missing semicolon */
     color: #fff;
     padding: 1rem 0;
     text-align: center;
@@ -35,7 +40,7 @@ section {
 }
 
 footer {
-    background: none
+    background: none; /* Added missing semicolon */
     color: #fff;
     text-align: center;
     padding: 1rem 0;
@@ -43,4 +48,3 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
