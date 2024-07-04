@@ -5,19 +5,19 @@ body {
     padding: 0;
     background: url('Designer (3).png') no-repeat center center fixed;
     background-size: cover;
-    color: #fff; /* Set text color to black */
+    color: #000; /* Set text color to black */
 }
 
 header {
-    background: url('header.png') no-repeat center center fixed;
-    color: #fff;
+    background: none
+    color: #000;
     padding: 1rem 0;
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    color: #fff; /* Set text color to black */
+    color: #000; /* Set text color to black */
 }
 
 nav ul {
@@ -31,7 +31,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff; /* Set link text color to black */
+    color: #000; /* Set link text color to black */
     text-decoration: none;
 }
 
@@ -45,12 +45,12 @@ section {
 }
 
 footer {
-    background: url('Designer (4).png') no-repeat center center fixed;
-    color: #fff;
+    background: none
+    color: #000;
     text-align: center;
     padding: 1rem 0;
     position: fixed;
     bottom: 0;
-    width: 30%;
+    width: 100%;
 }
 
