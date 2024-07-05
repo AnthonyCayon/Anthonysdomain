@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3:Spending time with my mom at a baseball game/title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your external stylesheet -->
+</head>
+<body>
+    <header>
+        <h1>Project 3: Spending time with my mom at a baseball game</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="project4.html">Project 4</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <section id="project4">
+            <h2>\ baesball tickets</h2>
+            <p>Here is a link to get baseball tickets for upcoming norfolk tide games!.</p>
+            <p>You can check out this link for baseball tickets <a href="https://tinyurl.com/4hee92fd" target="_blank">here</a>.</p>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Anthony. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
