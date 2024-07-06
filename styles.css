@@ -1,6 +1,26 @@
- body {
-    background: url("Designer (51).jpg") no-repeat center fixed;
-    background-size: cover; /* Ensure the background image covers the entire page */
+/* Notebook Background */
+/* Recomended font for text: @import url("http://fonts.googleapis.com/css?family=The+Girl+Next+Door"); */
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    background: url("Designer (51).jpg") no-repeat center fixed, 
+                linear-gradient(top, #f5f5f5 0px, #f5f5f5 19px, #ccc 19px, #ccc 20px);
+    background-size: cover, 100% 20px; /* Ensure the background image covers the entire page */
+}
+
+body:before {
+    content: "";
+    display: block;
+    height: 100%;
+    margin-left: 40px;
+    width: 2px;
+    border-left: 1px solid #ffaa9f;
+    border-right: 1px solid #ffaa9f;
 }
 
 header {
@@ -48,3 +68,4 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
