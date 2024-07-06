@@ -1,49 +1,50 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fffbea;
-    color: #333;
-    margin: 0;
-    padding: 0;
+ body {
+    background: url("Designer (51).jpg") no-repeat center fixed;
+    background-size: cover; /* Ensure the background image covers the entire page */
 }
 
 header {
-    background-color: #79a3b1;
-    color: white;
-    padding: 20px 0;
+    background: none; /* Added missing semicolon */
+    color: #fff;
+    padding: 1rem 0;
     text-align: center;
 }
 
 header h1 {
     margin: 0;
+    color: #fff; /* Set text color to white */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff; /* Set link text color to white */
+    text-decoration: none;
 }
 
 main {
-    width: 80%;
-    margin: 20px auto;
+    padding: 2rem;
+    color: #fff; /* Set main content text color to white */
 }
 
-.introduction, .ingredients, .instructions {
-    background-color: #f8f8f8;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.ingredients h2, .instructions h2 {
-    color: #b3568f;
-}
-
-ul, ol {
-    margin-left: 20px;
+section {
+    margin-bottom: 2rem;
 }
 
 footer {
+    background: none; /* Added missing semicolon */
+    color: #fff;
     text-align: center;
-    background-color: #79a3b1;
-    color: white;
-    padding: 10px 0;
-    position: relative;
+    padding: 1rem 0;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
