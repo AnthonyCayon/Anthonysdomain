@@ -1,4 +1,4 @@
-body, html {
+html, body {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -18,11 +18,11 @@ body, html {
 }
 
 #section1 {
-    background-image: url('https://i.imgur.com/Iqn4FBq.jpg'); /* Replace with your image path */
+    background-image: url('https://i.imgur.com/Iqn4FBq.jpg'); /* Using the image you like */
 }
 
 #section2 {
-    background-image: url('https://i.imgur.com/GKV26CJ.jpg'); /* Replace with your image path */
+    background-image: url('https://i.imgur.com/GKV26CJ.jpg'); /* Using another image */
 }
 
 .content-section {
