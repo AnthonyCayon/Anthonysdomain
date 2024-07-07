@@ -1,55 +1,33 @@
-// Firebase configuration
-var firebaseConfig = {
-    apiKey: "YOUR_FIREBASE_API_KEY",
-    authDomain: "YOUR_FIREBASE_AUTH_DOMAIN",
-    databaseURL: "YOUR_FIREBASE_DATABASE_URL",
-    projectId: "YOUR_FIREBASE_PROJECT_ID",
-    storageBucket: "YOUR_FIREBASE_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_FIREBASE_MESSAGING_SENDER_ID",
-    appId: "YOUR_FIREBASE_APP_ID"
-};
+const express = require('express');
+const http = require('http');
+const socketIo = require('socket.io');
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
 
-// Reference to the database service
-var database = firebase.database();
+// Serve static files (your website)
+app.use(express.static('public'));
 
-function sendMessage() {
-    let chatInput = document.getElementById('chat-input');
-    let message = chatInput.value;
+// WebSocket event handling
+io.on('connection', (socket) => {
+    console.log('A user connected');
 
-    if (message.trim() !== '') {
-        let newMessageRef = database.ref('messages').push();
-        newMessageRef.set({
-            user: "Anonymous",
-            text: message,
-            timestamp: new Date().toLocaleString()
-        });
-        chatInput.value = ''; // Clear the input
-    }
-}
+    // Handle incoming messages
+    socket.on('message', (message) => {
+        console.log('Message received:', message);
+        // Broadcast message to all connected clients
+        io.emit('message', message);
+    });
 
-database.ref('messages').on('value', (snapshot) => {
-    let messages = snapshot.val();
-    let chatBox = document.getElementById('chat-box');
-    chatBox.innerHTML = ''; // Clear the chat box
-    for (let id in messages) {
-        let message = messages[id];
-        addMessageToChatBox(message);
-    }
+    // Handle disconnection
+    socket.on('disconnect', () => {
+        console.log('User disconnected');
+    });
 });
 
-function addMessageToChatBox(message) {
-    let chatBox = document.getElementById('chat-box');
-    let messageElement = document.createElement('div');
-    messageElement.classList.add('message');
-
-    messageElement.innerHTML = `
-        <span class="user">${message.user}</span>
-        <span class="timestamp">${message.timestamp}</span>
-        <p>${message.text}</p>
-    `;
-    chatBox.appendChild(messageElement);
-    chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
-}
+// Start the server
+const port = process.env.PORT || 3000;
+server.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
