@@ -1,1 +1,22 @@
-
+[
+    {
+        "title": "Project 1",
+        "description": "Building The PC with my Dad with a Raidmax PC case",
+        "link": "https://www.raidmax.com/v100"
+    },
+    {
+        "title": "Project 2",
+        "description": "Spending time with my mom at a baseball game",
+        "link": "https://www.ticketsonsale.com/sports/norfolk-tides/69?gad_source=1&gclid=Cj0KCQjws560BhCuARIsAHMqE0FU_PF0pBFOy2Fe5NkWwCoJNiqJ5LBmWYLLXM1rVjd1sOvPjlA_KGAaAtUzEALw_wcB"
+    },
+    {
+        "title": "Project 3",
+        "description": "Getting a steam gift card",
+        "link": "https://www.gamestop.com/gift-cards/gaming-gift-cards/products/valve-steam-wallet-card-20/215593.html"
+    },
+    {
+        "title": "Project 4",
+        "description": "Tips and Tricks for FPS. Enjoy!",
+        "link": "project4.html"
+    }
+]
