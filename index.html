@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthony's Personal Website</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
 </head>
 <body>
     <header>
@@ -57,18 +59,45 @@
     </footer>
 
     <script>
+        // Firebase configuration
+        var firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+
         function sendMessage() {
             var messageInput = document.getElementById("messageInput");
             var message = messageInput.value;
             if (message.trim() !== "") {
-                var messagesDiv = document.getElementById("messages");
+                var newMessageKey = database.ref().child('messages').push().key;
+                database.ref('messages/' + newMessageKey).set({
+                    text: message
+                });
+
+                messageInput.value = "";
+            }
+        }
+
+        // Load messages from Firebase
+        database.ref('messages').on('value', function(snapshot) {
+            var messagesDiv = document.getElementById("messages");
+            messagesDiv.innerHTML = "";
+            snapshot.forEach(function(childSnapshot) {
+                var message = childSnapshot.val().text;
                 var messageElement = document.createElement("div");
                 messageElement.textContent = message;
                 messagesDiv.appendChild(messageElement);
-                messageInput.value = "";
-                messagesDiv.scrollTop = messagesDiv.scrollHeight;
-            }
-        }
+            });
+        });
     </script>
 </body>
 </html>
