@@ -1,10 +1,9 @@
-let chatBox = document.getElementById('chat-box');
-
 function sendMessage() {
     let chatInput = document.getElementById('chat-input');
     let message = chatInput.value;
 
     if (message.trim() !== '') {
+        let chatBox = document.getElementById('chat-box');
         let messageElement = document.createElement('div');
         messageElement.textContent = message;
         chatBox.appendChild(messageElement);
