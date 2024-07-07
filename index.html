@@ -15,6 +15,7 @@
         }
         #messages {
             height: 250px;
+            overflow-y: auto;
         }
         #messageInput {
             width: 70%;
@@ -47,9 +48,9 @@
             <h2>Projects</h2>
             <ul>
                 <li><strong>Project 1:</strong> <a href="https://www.raidmax.com/v100" target="_blank">Building The PC with my Dad with a Raidmax PC case</a></li>
-                <li><strong>Project 2:</strong> <a href="https://www.ticketsonsale.com/sports/norfolk-tides/69?gad_source=1&gclid=Cj0KCQjws560BhCuARIsAHMqE0FU_PF0pBFOy2Fe5NkWwCoJNiqJ5LBmWYLLXM1rVjd1sOvPjlA_KGAaAtUzEALw_wcB"_blank">Spending time with my mom at a baseball game</a></li>
-                <li><strong>Project 3:</strong> <a href="https://www.gamestop.com/gift-cards/gaming-gift-cards/products/valve-steam-wallet-card-20/215593.html">getting a steam gift card</a></li>
-                <li><strong>Project 4:</strong> <a href="project4.html">Tips and Tricks for FPS. Enjoy!</a></li> <!-- Updated link -->
+                <li><strong>Project 2:</strong> <a href="https://www.ticketsonsale.com/sports/norfolk-tides/69?gad_source=1&gclid=Cj0KCQjws560BhCuARIsAHMqE0FU_PF0pBFOy2Fe5NkWwCoJNiqJ5LBmWYLLXM1rVjd1sOvPjlA_KGAaAtUzEALw_wcB" target="_blank">Spending time with my mom at a baseball game</a></li>
+                <li><strong>Project 3:</strong> <a href="https://www.gamestop.com/gift-cards/gaming-gift-cards/products/valve-steam-wallet-card-20/215593.html" target="_blank">getting a steam gift card</a></li>
+                <li><strong>Project 4:</strong> <a href="project4.html">Tips and Tricks for FPS. Enjoy!</a></li>
             </ul>
         </section>
 
@@ -75,6 +76,9 @@
     </footer>
 
     <script>
+        // Replace this URL with your own Gist URL
+        const gistUrl = 'https://gist.githubusercontent.com/username/gistid/raw/chat.json';
+
         document.getElementById('sendButton').addEventListener('click', function() {
             var messageInput = document.getElementById('messageInput');
             var message = messageInput.value;
@@ -90,15 +94,25 @@
             }
         });
 
-        function saveMessage(message) {
-            var messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+        async function saveMessage(message) {
+            let response = await fetch(gistUrl);
+            let messages = await response.json();
             messages.push(message);
-            localStorage.setItem('chatMessages', JSON.stringify(messages));
+            await fetch(gistUrl, {
+                method: 'PUT',
+                body: JSON.stringify(messages),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            loadMessages();
         }
 
-        function loadMessages() {
-            var messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+        async function loadMessages() {
+            let response = await fetch(gistUrl);
+            let messages = await response.json();
             var messagesDiv = document.getElementById('messages');
+            messagesDiv.innerHTML = '';
             messages.forEach(function(message) {
                 var messageElement = document.createElement("div");
                 messageElement.textContent = message;
