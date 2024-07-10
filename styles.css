@@ -1,31 +1,19 @@
+/* Reset and general styles */
 body {
-    margin: auto;
+    margin: 0;
     font-family: Arial, sans-serif;
-    overflow: auto;
-    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
-    animation: gradient 15s ease infinite;
-    background-size: 400% 400%;
-    background-attachment: fixed;
+    overflow-x: hidden; /* Ensure no horizontal overflow */
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
-}
-
+/* Header and footer styles */
 header, footer {
     text-align: center;
     color: white;
+    background-color: #333;
     padding: 1rem;
 }
 
+/* Navigation styles */
 nav ul {
     list-style: none;
     padding: 0;
@@ -39,13 +27,129 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+    color: #f0f0f0;
+}
+
+/* Main content area */
 main {
+    background-color: #f0f0f0;
     padding: 2rem;
-    color: white;
-    text-align: center;
 }
 
-/* Additional styles can be added or adjusted as needed */
+/* Section headings */
+h2 {
+    color: #333;
+}
 
+/* About Me section */
+#about {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Projects section */
+#projects {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+#projects ul {
+    padding-left: 2rem;
+}
+
+#projects li {
+    margin-bottom: 1rem;
+}
+
+#projects a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#projects a:hover {
+    color: #0056b3;
+}
+
+/* Favorite Games section */
+#favorite-games {
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+#favorite-games .game {
+    margin-bottom: 2rem;
+}
+
+#favorite-games h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+#favorite-games p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+#favorite-games a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#favorite-games a:hover {
+    color: #0056b3;
+}
+
+/* Contact section */
+#contact {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #0056b3;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+
+    #projects ul {
+        padding-left: 1rem;
+    }
+}
