@@ -47,21 +47,5 @@ main {
     text-align: center;
 }
 
-#chat-box {
-    border: 1px solid #ccc;
-    height: 200px;
-    overflow-y: scroll;
-    padding: 10px;
-    background-color: white;
-    color: black;
-}
+/* Additional styles can be added or adjusted as needed */
 
-#chat-input {
-    width: calc(100% - 20px);
-    padding: 10px;
-}
-
-button {
-    padding: 10px;
-    cursor: pointer;
-}
