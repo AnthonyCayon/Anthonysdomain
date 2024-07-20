@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tips and Tricks for FPS</title>
+    <title>Anthony's Personal Website</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
                 background-position: 0% 0%;
             }
         }
-
+ 
         header, footer {
             text-align: center;
             color: white;
@@ -81,14 +81,22 @@
             margin-bottom: 2rem;
         }
 
-        textarea {
-            width: 100%;
+        #chatbox {
+            border: 1px solid #ccc;
             height: 200px;
+            overflow-y: scroll;
             padding: 10px;
+            background-color: white;
+            color: black;
+            margin-top: 20px;
+        }
+
+        #messageInput {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
             border: none;
             border-radius: 5px;
-            margin-top: 10px;
-            resize: vertical;
         }
 
         button {
@@ -115,19 +123,58 @@
 </head>
 <body>
     <header>
-        <h1>Tips and Tricks for FPS</h1>
+        <h1>Anthony's Personal Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="tips-and-tricks.html" target="_blank">Tips and Tricks for FPS</a></li>
+                <li><a href="#favorite-games">Favorite Games</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Add Your Tips and Tricks</h2>
-            <textarea id="tipsInput" placeholder="Type your tips and tricks here..."></textarea>
-            <button id="saveButton">Save</button>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Anthony. I enjoy playing Hitman and Fortnite, and my favorite foods are seaweed and mac and cheese. I also have a loving family with a dog and a cat. I go to a Catholic school where I worship God. I made this website to spend time with my dad and get a steam gift card. Enjoy this website!</p>
         </section>
 
-        <section>
-            <h2>Saved Tips and Tricks</h2>
-            <div id="savedTips"></div>
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Project 1:</strong> <a href="https://www.raidmax.com/v100" target="_blank">Building The PC with my Dad with a Raidmax PC case</a></li>
+                <li><strong>Project 2:</strong> <a href="https://www.ticketsonsale.com/sports/norfolk-tides/69?gad_source=1&gclid=Cj0KCQjws560BhCuARIsAHMqE0FU_PF0pBFOy2Fe5NkWwCoJNiqJ5LBmWYLLXM1rVjd1sOvPjlA_KGAaAtUzEALw_wcB" target="_blank">Spending time with my mom at a baseball game</a></li>
+                <li><strong>Project 3:</strong> <a href="https://www.gamestop.com/gift-cards/gaming-gift-cards/products/valve-steam-wallet-card-20/215593.html" target="_blank">Getting a Steam gift card</a></li>
+                <li><strong>Project 4:</strong> <a href="project4.html">Tips and Tricks for FPS. Enjoy!</a></li>
+            </ul>
+        </section>
+
+        <section id="favorite-games">
+            <h2>Favorite Games</h2>
+            <p>Here are some of Anthony's favorite games:</p>
+            <ul>
+                <li><a href="https://ioi.dk/hitman" target="_blank">Hitman</a></li>
+                <li><a href="https://www.ubisoft.com/en-us/game/watch-dogs/watch-dogs-2" target="_blank">Watch Dogs 2</a></li>
+                <li><a href="https://www.fortnite.com/download" target="_blank">Fortnite</a></li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>You can reach me at: <a href="mailto:Antoniocay736@gmail.com">Antoniocay736@gmail.com</a></p>
+            <p>You can also reach me at: <a href="https://www.youtube.com/@AntonioCay/featured" target="_blank">YouTube Channel</a></p>
+        </section>
+
+        <!-- Chatbox Section -->
+        <section id="chat">
+            <h2>Chat with Others</h2>
+            <div id="chatbox">
+                <div id="messages"></div>
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button id="sendButton">Send</button>
+            </div>
         </section>
     </main>
 
@@ -136,38 +183,40 @@
     </footer>
 
     <script>
-        document.getElementById('saveButton').addEventListener('click', function() {
-            var tipsInput = document.getElementById('tipsInput');
-            var tip = tipsInput.value;
-            if (tip.trim() !== "") {
-                var savedTipsDiv = document.getElementById('savedTips');
-                var tipElement = document.createElement("div");
-                tipElement.textContent = tip;
-                savedTipsDiv.appendChild(tipElement);
+        document.getElementById('sendButton').addEventListener('click', function() {
+            var messageInput = document.getElementById('messageInput');
+            var message = messageInput.value;
+            if (message.trim() !== "") {
+                var messagesDiv = document.getElementById('messages');
+                var messageElement = document.createElement("div");
+                messageElement.textContent = message;
+                messagesDiv.appendChild(messageElement);
 
-                saveTip(tip);
-                tipsInput.value = "";
+                saveMessage(message);
+                messageInput.value = "";
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
             }
         });
 
-        function saveTip(tip) {
-            var tips = JSON.parse(localStorage.getItem('savedTips')) || [];
-            tips.push(tip);
-            localStorage.setItem('savedTips', JSON.stringify(tips));
+        function saveMessage(message) {
+            var messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+            messages.push(message);
+            localStorage.setItem('chatMessages', JSON.stringify(messages));
         }
 
-        function loadTips() {
-            var tips = JSON.parse(localStorage.getItem('savedTips')) || [];
-            var savedTipsDiv = document.getElementById('savedTips');
-            tips.forEach(function(tip) {
-                var tipElement = document.createElement("div");
-                tipElement.textContent = tip;
-                savedTipsDiv.appendChild(tipElement);
+        function loadMessages() {
+            var messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+            var messagesDiv = document.getElementById('messages');
+            messages.forEach(function(message) {
+                var messageElement = document.createElement("div");
+                messageElement.textContent = message;
+                messagesDiv.appendChild(messageElement);
             });
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
         }
 
         window.onload = function() {
-            loadTips();
+            loadMessages();
         };
     </script>
 </body>
