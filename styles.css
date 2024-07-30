@@ -1,4 +1,6 @@
 body {
+    body {
+    cursor: url('path/to/among_us_cursor.cur'), auto;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -6,7 +8,6 @@ body {
     color: white;
     overflow-x: hidden;
     body {
-    cursor: url('path/to/among_us_cursor.cur'), auto;
 }
 
 }
