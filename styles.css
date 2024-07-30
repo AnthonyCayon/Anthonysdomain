@@ -1,11 +1,11 @@
 body {
-    cursor: url('among_us_cursor.cur'), auto;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
     color: white;
     overflow-x: hidden;
+    cursor: url('among_us_cursor.cur'), auto; /* Ensure this path is correct */
 }
 
 header {
@@ -35,11 +35,6 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #ffdf00;
 }
 
 .hero {
@@ -107,52 +102,14 @@ nav ul li a:hover {
     border-radius: 10px;
     width: 300px;
     text-align: center;
-    transition: transform 0.3s;
 }
 
 .project h3 {
     margin-top: 0;
 }
 
-.project a {
-    color: #ffdf00;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.project a:hover {
-    color: white;
-}
-
-.project:hover {
-    transform: scale(1.05);
-}
-
 footer {
     text-align: center;
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 768px) {
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .content h2 {
-        font-size: 1.5rem;
-    }
-
-    .content p {
-        font-size: 1rem;
-    }
-
-    .project {
-        width: 100%;
-        margin: 10px 0;
-    }
 }
