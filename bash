@@ -1,3 +1,4 @@
-git add .
-git commit -m "Add favicon"
-git push
+/your_project_folder
+    /index.html
+    /styles.css
+    /among_us_cursor.cur
