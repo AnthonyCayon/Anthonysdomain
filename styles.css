@@ -1,88 +1,146 @@
 body {
-    margin: auto;
-    font-family: Signika, sans-serif;
-    overflow: auto;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
-    animation: gradient 15s ease infinite;
-    background-size: 400% 400%;
-    background-attachment: fixed;
-}
-.signika-<uniquifier> {
-  font-family: "Signika", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  font-variation-settings:
-    "GRAD" 0;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
-}
-
-header, footer {
-    text-align: center;
     color: white;
-    padding: 1rem;
+    overflow-x: hidden;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
 }
 
 nav ul li {
-    display: inline-block; /* Ensures each item takes up its own line */
-    margin: 0 2px; /* Adjust margin as needed */
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-main {
-   
+nav ul li a:hover {
+    color: #ffdf00;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    margin-top: 20px;
+    background: #333;
     color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #555;
+}
+
+.content {
+    padding: 50px 20px;
+}
+
+.content h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.content p {
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
 }
 
-#chatbox {
-    border: 1px solid #ccc;
-    height: 30px;
-    overflow-y: scroll;
-    padding: 1px;
-    background-color: white;
-    color: black;
-    margin-top: 2px;
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-#messageInput {
-    width: fitted;
-    padding: 10px;
-    margin-top: 10px;
+.project {
+    background: rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
 }
 
-button {
-    padding: 10px;
-    cursor: pointer;
+.project h3 {
+    margin-top: 0;
+}
+
+.project a {
+    color: #ffdf00;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.project a:hover {
+    color: white;
+}
+
+.project:hover {
+    transform: scale(1.05);
 }
 
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: fitted;
-    background-color: transparent; /* Changed to transparent */
-    color: white;
     text-align: center;
-    padding: 2em 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
 }
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .content h2 {
+        font-size: 1.
