@@ -6,43 +6,25 @@
     <title>Anthony's Personal Website</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@500&display=swap" rel="stylesheet">
-
     <style>
         body {
-            margin: auto;
-            overflow: auto;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
-            animation: gradient 15s ease infinite;
-            background-size: 400% 400%;
-            background-attachment: fixed;
-            cursor: url('among_us_cursor.cur'), auto; /* Apply custom cursor */
             color: white;
-            font-family: "Signika", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 500;
-            font-style: normal;
+            overflow-x: hidden;
         }
 
-        @keyframes gradient {
-            0% {
-                background-position: 0% 0%;
-            }
-            50% {
-                background-position: 100% 100%;
-            }
-            100% {
-                background-position: 0% 0%;
-            }
-        }
- 
-        header, footer {
-            text-align: center;
-            color: white;
-            padding: .5em;
+        header {
             background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
         }
 
         nav ul {
@@ -50,6 +32,7 @@
             padding: 0;
             display: flex;
             justify-content: center;
+            margin: 20px 0;
         }
 
         nav ul li {
@@ -59,67 +42,84 @@
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-family: "Signika", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 500;
-            font-style: normal;
+            font-weight: bold;
         }
 
-        main {
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
             background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
         }
 
-        h2 {
-            border-bottom: 2px solid white;
-            padding-bottom: 2px;
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
 
-        section {
-            margin-bottom: 2rem;
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: auto;
         }
 
-        #chatbox {
-            border: 1px solid #ccc;
-            height: 200px;
-            overflow-y: scroll;
-            padding: 10px;
-            background-color: white;
-            color: black;
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
             margin-top: 20px;
-        }
-
-        #messageInput {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-        }
-
-        button {
-            padding: 10px;
-            cursor: pointer;
             background: #333;
             color: white;
-            border: none;
+            text-decoration: none;
             border-radius: 5px;
-            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #555;
+        }
+
+        .content {
+            padding: 50px 20px;
+        }
+
+        .content h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .project {
+            background: rgba(0, 0, 0, 0.5);
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .project h3 {
+            margin-top: 0;
         }
 
         footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
             text-align: center;
-            padding: 3px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -130,97 +130,55 @@
             <ul>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="https://youtu.be/jPZXbW4wz_A?si=op-0Ku3iIL7LcSmR" target="_blank">Tips and Tricks for FPS</a></li>
-                <li><a href="#favorite-games">Favorite Games</a></li>
+                <li><a href="tips-and-tricks.html" target="_blank">Tips and Tricks for FPS</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm Anthony. I enjoy playing Hitman and Fortnite, and my favorite foods are seaweed and mac and cheese. I also have a loving family with a dog and a cat. I go to a Catholic school where I worship God. I made this website to spend time with my dad and get a steam gift card. Enjoy this website!</p>
-        </section>
+    <section class="hero">
+        <div>
+            <h2>Welcome to My World</h2>
+            <p>Hello! I'm Anthony. I enjoy playing Hitman and Fortnite, and my favorite foods are seaweed and mac and cheese. I also have a loving family with a dog and a cat. I go to a Catholic school where I worship God. I made this website to spend time with my dad and get a Steam gift card. Enjoy this website!</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li><strong>Project 1:</strong> <a href="https://www.raidmax.com/v100" target="_blank">Building The PC with my Dad with a Raidmax PC case</a></li>
-                <li><strong>Project 2:</strong> <a href="https://www.ticketsonsale.com/sports/norfolk-tides/69?gad_source=1&gclid=Cj0KCQjws560BhCuARIsAHMqE0FU_PF0pBFOy2Fe5NkWwCoJNiqJ5LBmWYLLXM1rVjd1sOvPjlA_KGAaAtUzEALw_wcB" target="_blank">Spending time with my mom at a baseball game</a></li>
-                <li><strong>Project 3:</strong> <a href="https://www.gamestop.com/gift-cards/gaming-gift-cards/products/valve-steam-wallet-card-20/215593.html" target="_blank">Getting a Steam gift card</a></li>
-                <li><strong>Project 4:</strong> <a href="project4.html">Tips and Tricks for FPS. Enjoy!</a></li>
-            </ul>
-        </section>
+    <section id="about" class="content">
+        <h2>About Me</h2>
+        <p>I enjoy playing Hitman and Fortnite, and my favorite foods are seaweed and mac and cheese. I also have a loving family with a dog and a cat. I go to a Catholic school where I worship God. I made this website to spend time with my dad and get a Steam gift card. Enjoy this website!</p>
+    </section>
 
-        <section id="favorite-games">
-            <h2>Favorite Games</h2>
-            <p>Here are some of Anthony's favorite games:</p>
-            <ul>
-                <li><a href="https://ioi.dk/hitman" target="_blank">Hitman</a></li>
-                <li><a href="https://www.ubisoft.com/en-us/game/watch-dogs/watch-dogs-2" target="_blank">Watch Dogs 2</a></li>
-                <li><a href="https://www.fortnite.com/download" target="_blank">Fortnite</a></li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>You can reach me at: <a href="mailto:Antoniocay736@gmail.com">Antoniocay736@gmail.com</a></p>
-            <p>You can also reach me at: <a href="https://www.youtube.com/@AntonioCay/featured" target="_blank">YouTube Channel</a></p>
-        </section>
-
-        <!-- Chatbox Section -->
-        <section id="chat">
-            <h2>Chat with Others</h2>
-            <div id="chatbox">
-                <div id="messages"></div>
-                <input type="text" id="messageInput" placeholder="Type a message...">
-                <button id="sendButton">Send</button>
+    <section id="projects" class="content">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Project 1</h3>
+                <p><a href="https://www.raidmax.com/v100" target="_blank">Building The PC with my Dad with a Raidmax PC case</a></p>
             </div>
-        </section>
-    </main>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p><a href="https://www.ticketsonsale.com/sports/norfolk-tides/69?gad_source=1&gclid=Cj0KCQjws560BhCuARIsAHMqE0FU_PF0pBFOy2Fe5NkWwCoJNiqJ5LBmWYLLXM1rVjd1sOvPjlA_KGAaAtUzEALw_wcB" target="_blank">Spending time with my mom at a baseball game</a></p>
+            </div>
+            <div class="project">
+                <h3>Project 3</h3>
+                <p><a href="https://www.gamestop.com/gift-cards/gaming-gift-cards/products/valve-steam-wallet-card-20/215593.html" target="_blank">Getting a Steam gift card</a></p>
+            </div>
+            <div class="project">
+                <h3>Project 4</h3>
+                <p><a href="tips-and-tricks.html" target="_blank">Tips and Tricks for FPS. Enjoy!</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="content">
+        <h2>Contact</h2>
+        <p>You can reach me at: <a href="mailto:Antoniocay736@gmail.com">Antoniocay736@gmail.com</a></p>
+        <p>You can also reach me at: <a href="https://www.youtube.com/@AntonioCay/featured" target="_blank">YouTube Channel</a></p>
+    </section>
 
     <footer>
         <p>&copy; 2024 Anthony. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.getElementById('sendButton').addEventListener('click', function() {
-            var messageInput = document.getElementById('messageInput');
-            var message = messageInput.value;
-            if (message.trim() !== "") {
-                var messagesDiv = document.getElementById('messages');
-                var messageElement = document.createElement("div");
-                messageElement.textContent = message;
-                messagesDiv.appendChild(messageElement);
-
-                saveMessage(message);
-                messageInput.value = "";
-                messagesDiv.scrollTop = messagesDiv.scrollHeight;
-            }
-        });
-
-        function saveMessage(message) {
-            var messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-            messages.push(message);
-            localStorage.setItem('chatMessages', JSON.stringify(messages));
-        }
-
-        function loadMessages() {
-            var messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-            var messagesDiv = document.getElementById('messages');
-            messages.forEach(function(message) {
-                var messageElement = document.createElement("div");
-                messageElement.textContent = message;
-                messagesDiv.appendChild(messageElement);
-            });
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        }
-
-        window.onload = function() {
-            loadMessages();
-        };
-    </script>
 </body>
 </html>
-``
