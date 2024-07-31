@@ -14,7 +14,7 @@
             <ul>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#tips-and-tricks">Tips and Tricks for FPS</a></li>
+                <li><a href="#tips-and-tricks" onclick="showTipsAndTricks()">Tips and Tricks for FPS</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -50,7 +50,7 @@
             </div>
             <div class="project">
                 <h3>Project 4</h3>
-                <p><a href="tips-and-tricks.html" target="_blank">Tips and Tricks for FPS. Enjoy!</a></p>
+                <p><a href="tips-and-tricks.html" onclick="showTipsAndTricks()">Tips and Tricks for FPS. Enjoy!</a></p>
             </div>
         </div>
         <button class="btn" onclick="goBack()">Go Back</button>
@@ -59,7 +59,7 @@
     <section id="tips-and-tricks" class="content" style="display: none;">
         <h2>Tips and Tricks for FPS</h2>
         <p>Here's a video that shows you ten methods to improve your FPS:</p>
-        <p><a href="https://www.youtube.com/watch?v=SSCghp40ydk&t=7s" target="_blank">Watch the video on YouTube</a></p>
+        <button class="btn" onclick="showVideo()">Watch Video</button>
         <button class="btn" onclick="goBack()">Go Back</button>
     </section>
 
@@ -72,6 +72,14 @@
     <footer>
         <p>&copy; 2024 Anthony. All rights reserved.</p>
     </footer>
+
+    <!-- Modal for YouTube Video -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeVideo()">&times;</span>
+            <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
 
     <script>
         function showProjects() {
@@ -98,8 +106,23 @@
             document.querySelector('#contact').style.display = 'block';
         }
 
-        document.querySelector('nav ul li a[href="#projects"]').onclick = showProjects;
-        document.querySelector('nav ul li a[href="#tips-and-tricks"]').onclick = showTipsAndTricks;
+        function showVideo() {
+            document.getElementById('videoModal').style.display = 'block';
+            document.getElementById('videoFrame').src = "https://www.youtube.com/embed/SSCghp40ydk?t=7s";
+        }
+
+        function closeVideo() {
+            document.getElementById('videoModal').style.display = 'none';
+            document.getElementById('videoFrame').src = "";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('videoModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+                document.getElementById('videoFrame').src = "";
+            }
+        }
     </script>
 </body>
 </html>
