@@ -14,7 +14,7 @@
             <ul>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="https://www.youtube.com/watch?v=SSCghp40ydk&t=7s" target="_blank">Tips and Tricks for FPS</a></li>
+                <li><a href="#tips-and-tricks">Tips and Tricks for FPS</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -50,9 +50,16 @@
             </div>
             <div class="project">
                 <h3>Project 4</h3>
-                <p><a href="https://www.youtube.com/watch?v=SSCghp40ydk&t=7s" target="_blank">Tips and Tricks for FPS. Enjoy!</a></p>
+                <p><a href="tips-and-tricks.html" target="_blank">Tips and Tricks for FPS. Enjoy!</a></p>
             </div>
         </div>
+        <button class="btn" onclick="goBack()">Go Back</button>
+    </section>
+
+    <section id="tips-and-tricks" class="content" style="display: none;">
+        <h2>Tips and Tricks for FPS</h2>
+        <p>Here's a video that shows you ten methods to improve your FPS:</p>
+        <p><a href="https://www.youtube.com/watch?v=SSCghp40ydk&t=7s" target="_blank">Watch the video on YouTube</a></p>
         <button class="btn" onclick="goBack()">Go Back</button>
     </section>
 
@@ -71,6 +78,15 @@
             document.querySelector('.hero').style.display = 'none';
             document.querySelector('#about').style.display = 'none';
             document.querySelector('#projects').style.display = 'block';
+            document.querySelector('#tips-and-tricks').style.display = 'none';
+            document.querySelector('#contact').style.display = 'none';
+        }
+
+        function showTipsAndTricks() {
+            document.querySelector('.hero').style.display = 'none';
+            document.querySelector('#about').style.display = 'none';
+            document.querySelector('#projects').style.display = 'none';
+            document.querySelector('#tips-and-tricks').style.display = 'block';
             document.querySelector('#contact').style.display = 'none';
         }
 
@@ -78,8 +94,12 @@
             document.querySelector('.hero').style.display = 'flex';
             document.querySelector('#about').style.display = 'block';
             document.querySelector('#projects').style.display = 'none';
+            document.querySelector('#tips-and-tricks').style.display = 'none';
             document.querySelector('#contact').style.display = 'block';
         }
+
+        document.querySelector('nav ul li a[href="#projects"]').onclick = showProjects;
+        document.querySelector('nav ul li a[href="#tips-and-tricks"]').onclick = showTipsAndTricks;
     </script>
 </body>
 </html>
