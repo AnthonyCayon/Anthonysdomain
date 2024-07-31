@@ -6,129 +6,6 @@
     <title>Anthony's Personal Website</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
-            color: white;
-            overflow-x: hidden;
-            cursor: url('among_us_cursor.cur'), auto;
-        }
-
-        header {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 25px;
-            margin-top: 20px;
-            background: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #555;
-        }
-
-        .content {
-            padding: 50px 20px;
-        }
-
-        .content h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .content p {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            margin-top: 30px;
-        }
-
-        .project {
-            background: rgba(0, 0, 0, 0.5);
-            margin: 10px;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            text-align: center;
-        }
-
-        .project h3 {
-            margin-top: 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -147,7 +24,7 @@
         <div class="hero-content">
             <h2>Welcome to My World</h2>
             <p>Hello! I'm Anthony. I enjoy playing Hitman and Fortnite, and my favorite foods are seaweed and mac and cheese. I also have a loving family with a dog and a cat. I go to a Catholic school where I worship God. I made this website to spend time with my dad and get a Steam gift card. Enjoy this website!</p>
-            <a href="#projects" class="btn">Learn More</a>
+            <a href="#projects" class="btn" onclick="showProjects()">Learn More</a>
         </div>
     </section>
 
@@ -156,7 +33,7 @@
         <p>I enjoy playing Hitman and Fortnite, and my favorite foods are seaweed and mac and cheese. I also have a loving family with a dog and a cat. I go to a Catholic school where I worship God. I made this website to spend time with my dad and get a Steam gift card. Enjoy this website!</p>
     </section>
 
-    <section id="projects" class="content">
+    <section id="projects" class="content" style="display: none;">
         <h2>Projects</h2>
         <div class="main-content">
             <div class="box">
@@ -176,6 +53,7 @@
                 <p><a href="tips-and-tricks.html">Tips and Tricks for FPS. Enjoy!</a></p>
             </div>
         </div>
+        <button class="btn" onclick="goBack()">Go Back</button>
     </section>
 
     <section id="contact" class="content">
@@ -187,5 +65,21 @@
     <footer>
         <p>&copy; 2024 Anthony. All rights reserved.</p>
     </footer>
+
+    <script>
+        function showProjects() {
+            document.querySelector('.hero').style.display = 'none';
+            document.querySelector('#about').style.display = 'none';
+            document.querySelector('#projects').style.display = 'block';
+            document.querySelector('#contact').style.display = 'none';
+        }
+
+        function goBack() {
+            document.querySelector('.hero').style.display = 'flex';
+            document.querySelector('#about').style.display = 'block';
+            document.querySelector('#projects').style.display = 'none';
+            document.querySelector('#contact').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
