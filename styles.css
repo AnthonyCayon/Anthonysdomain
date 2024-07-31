@@ -1,3 +1,8 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +11,9 @@ body {
     color: white;
     overflow-x: hidden;
     cursor: url('among_us_cursor.cur'), auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -79,18 +87,20 @@ footer {
     text-align: center;
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    bottom: 0;
+    position: relative;
     width: 100%;
+    margin-top: auto; /* Ensures footer sticks to bottom */
 }
 
 .content {
     padding: 20px;
+    flex: 1; /* Allows content to grow and push footer down */
 }
 
 .tips-content {
     text-align: center;
     margin: 20px auto;
+    position: relative;
 }
 
 .go-back {
