@@ -60,7 +60,9 @@
     <section id="tips-and-tricks" class="content" style="display: none;">
         <h2>Tips and Tricks for FPS</h2>
         <p>Here's a video that shows you ten methods to improve your FPS:</p>
-        <button class="btn" onclick="showVideo()">Watch Video</button>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/SSCghp40ydk?t=7s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
         <button class="btn" onclick="showSection('hero')">Go Back</button>
     </section>
 
@@ -75,14 +77,6 @@
         <p>&copy; 2024 Anthony. All rights reserved.</p>
     </footer>
 
-    <!-- Modal for YouTube Video -->
-    <div id="videoModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeVideo()">&times;</span>
-            <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
-
     <script>
         function showSection(sectionId) {
             const sections = document.querySelectorAll('section');
@@ -90,23 +84,6 @@
                 section.style.display = 'none';
             });
             document.getElementById(sectionId).style.display = 'block';
-        }
-
-        function showVideo() {
-            document.getElementById('videoModal').style.display = 'block';
-            document.getElementById('videoFrame').src = "https://www.youtube.com/embed/SSCghp40ydk?t=7s";
-        }
-
-        function closeVideo() {
-            document.getElementById('videoModal').style.display = 'none';
-            document.getElementById('videoFrame').src = "";
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('videoModal');
-            if (event.target == modal) {
-                closeVideo();
-            }
         }
     </script>
 </body>
