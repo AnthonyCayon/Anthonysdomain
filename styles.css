@@ -51,7 +51,6 @@ nav ul li a {
 
 .hero-content {
     max-width: 600px;
-    width: 100%;
 }
 
 .hero h2 {
@@ -151,3 +150,4 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+
