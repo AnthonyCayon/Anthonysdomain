@@ -12,23 +12,23 @@
         <h1>Anthony's Personal Website</h1>
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#tips-and-tricks" onclick="showTipsAndTricks()">Tips and Tricks for FPS</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" onclick="showSection('about')">About Me</a></li>
+                <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+                <li><a href="#" onclick="showSection('tips-and-tricks')">Tips and Tricks for FPS</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
+    <section id="hero" class="hero">
         <div class="hero-content">
             <h2>Welcome to My World</h2>
             <p>Hello! I'm Anthony. I enjoy playing Hitman and Fortnite, and my favorite foods are seaweed and mac and cheese. I also have a loving family with a dog and a cat. I go to a Catholic school where I worship God. I made this website to spend time with my dad and get a Steam gift card. Enjoy this website!</p>
-            <a href="#projects" class="btn" onclick="showProjects()">Learn More</a>
+            <a href="#" class="btn" onclick="showSection('projects')">Learn More</a>
         </div>
     </section>
 
-    <section id="about" class="content">
+    <section id="about" class="content" style="display: none;">
         <h2>About Me</h2>
         <p>I enjoy playing Hitman and Fortnite, and my favorite foods are seaweed and mac and cheese. I also have a loving family with a dog and a cat. I go to a Catholic school where I worship God. I made this website to spend time with my dad and get a Steam gift card. Enjoy this website!</p>
     </section>
@@ -50,20 +50,20 @@
             </div>
             <div class="project">
                 <h3>Project 4</h3>
-                <p><a href="tips-and-tricks.html" onclick="showTipsAndTricks()">Tips and Tricks for FPS. Enjoy!</a></p>
+                <p><a href="#" onclick="showSection('tips-and-tricks')">Tips and Tricks for FPS. Enjoy!</a></p>
             </div>
         </div>
-        <button class="btn" onclick="goBack()">Go Back</button>
+        <button class="btn" onclick="showSection('hero')">Go Back</button>
     </section>
 
     <section id="tips-and-tricks" class="content" style="display: none;">
         <h2>Tips and Tricks for FPS</h2>
         <p>Here's a video that shows you ten methods to improve your FPS:</p>
         <button class="btn" onclick="showVideo()">Watch Video</button>
-        <button class="btn" onclick="goBack()">Go Back</button>
+        <button class="btn" onclick="showSection('hero')">Go Back</button>
     </section>
 
-    <section id="contact" class="content">
+    <section id="contact" class="content" style="display: none;">
         <h2>Contact</h2>
         <p>You can reach me at: <a href="mailto:Antoniocay736@gmail.com">Antoniocay736@gmail.com</a></p>
         <p>You can also reach me at: <a href="https://www.youtube.com/@AntonioCay/featured" target="_blank">YouTube Channel</a></p>
@@ -74,7 +74,7 @@
     </footer>
 
     <!-- Modal for YouTube Video -->
-    <div id="videoModal" class="modal">
+    <div id="videoModal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close" onclick="closeVideo()">&times;</span>
             <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -82,28 +82,12 @@
     </div>
 
     <script>
-        function showProjects() {
-            document.querySelector('.hero').style.display = 'none';
-            document.querySelector('#about').style.display = 'none';
-            document.querySelector('#projects').style.display = 'block';
-            document.querySelector('#tips-and-tricks').style.display = 'none';
-            document.querySelector('#contact').style.display = 'none';
-        }
-
-        function showTipsAndTricks() {
-            document.querySelector('.hero').style.display = 'none';
-            document.querySelector('#about').style.display = 'none';
-            document.querySelector('#projects').style.display = 'none';
-            document.querySelector('#tips-and-tricks').style.display = 'block';
-            document.querySelector('#contact').style.display = 'none';
-        }
-
-        function goBack() {
-            document.querySelector('.hero').style.display = 'flex';
-            document.querySelector('#about').style.display = 'block';
-            document.querySelector('#projects').style.display = 'none';
-            document.querySelector('#tips-and-tricks').style.display = 'none';
-            document.querySelector('#contact').style.display = 'block';
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
         }
 
         function showVideo() {
@@ -117,7 +101,7 @@
         }
 
         window.onclick = function(event) {
-            var modal = document.getElementById('videoModal');
+            const modal = document.getElementById('videoModal');
             if (event.target == modal) {
                 modal.style.display = "none";
                 document.getElementById('videoFrame').src = "";
