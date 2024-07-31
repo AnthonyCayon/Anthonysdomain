@@ -36,19 +36,25 @@
 
     <section id="projects" class="content" style="display: none;">
         <h2>Projects</h2>
-        <div class="project">
+        <div class="tabs">
+            <button class="tab-button" onclick="showProject('project1')">Project 1</button>
+            <button class="tab-button" onclick="showProject('project2')">Project 2</button>
+            <button class="tab-button" onclick="showProject('project3')">Project 3</button>
+            <button class="tab-button" onclick="showProject('project4')">Project 4</button>
+        </div>
+        <div id="project1" class="tab-content">
             <h3>Project 1</h3>
             <p><strong>Project 1:</strong> <a href="https://www.raidmax.com/v100" target="_blank">Building The PC with my Dad with a Raidmax PC case</a></p>
         </div>
-        <div class="project">
+        <div id="project2" class="tab-content" style="display: none;">
             <h3>Project 2</h3>
             <p><strong>Project 2:</strong> <a href="https://www.ticketsonsale.com/sports/norfolk-tides/69?gad_source=1&gclid=Cj0KCQjws560BhCuARIsAHMqE0FU_PF0pBFOy2Fe5NkWwCoJNiqJ5LBmWYLLXM1rVjd1sOvPjlA_KGAaAtUzEALw_wcB" target="_blank">Spending time with my mom at a baseball game</a></p>
         </div>
-        <div class="project">
+        <div id="project3" class="tab-content" style="display: none;">
             <h3>Project 3</h3>
             <p><strong>Project 3:</strong> <a href="https://www.gamestop.com/gift-cards/gaming-gift-cards/products/valve-steam-wallet-card-20/215593.html" target="_blank">Getting a Steam gift card</a></p>
         </div>
-        <div class="project">
+        <div id="project4" class="tab-content" style="display: none;">
             <h3>Project 4</h3>
             <p><strong>Project 4:</strong> <a href="tips-and-tricks.html">Tips and Tricks for FPS</a></p>
         </div>
@@ -86,6 +92,14 @@
                 section.style.display = 'none';
             });
             document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function showProject(projectId) {
+            const projects = document.querySelectorAll('.tab-content');
+            projects.forEach(project => {
+                project.style.display = 'none';
+            });
+            document.getElementById(projectId).style.display = 'block';
         }
     </script>
 </body>
