@@ -12,8 +12,6 @@ header {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     text-align: center;
-    position: relative;
-    z-index: 1;
 }
 
 header h1 {
@@ -81,9 +79,13 @@ footer {
     text-align: center;
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
-    position: relative; /* Changed to relative to prevent overlap with content */
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.content {
+    padding: 20px;
 }
 
 .video-container {
@@ -94,4 +96,6 @@ footer {
 .video-container iframe {
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
