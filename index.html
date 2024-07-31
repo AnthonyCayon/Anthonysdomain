@@ -5,36 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthony's Personal Website</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
         <h1>Anthony's Personal Website</h1>
         <nav>
             <ul>
-                <li><a href="#" onclick="showSection('about')">About Me</a></li>
-                <li><a href="#" onclick="showSection('projects')">Projects</a></li>
-                <li><a href="#" onclick="showSection('tips-and-tricks')">Tips and Tricks for FPS</a></li>
-                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="learnMoreBtn">Learn More</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero" class="hero">
+    <section class="hero">
         <div class="hero-content">
             <h2>Welcome to My World</h2>
             <p>Hello! I'm Anthony. I enjoy playing Hitman and Fortnite, and my favorite foods are seaweed and mac and cheese. I also have a loving family with a dog and a cat. I go to a Catholic school where I worship God. I made this website to spend time with my dad and get a Steam gift card. Enjoy this website!</p>
-            <a href="#" class="btn" onclick="showSection('projects')">Learn More</a>
+            <a href="#projects" class="btn">Learn More</a>
         </div>
     </section>
 
-    <section id="about" class="content" style="display: none;">
+    <section id="about" class="content">
         <h2>About Me</h2>
         <p>I enjoy playing Hitman and Fortnite, and my favorite foods are seaweed and mac and cheese. I also have a loving family with a dog and a cat. I go to a Catholic school where I worship God. I made this website to spend time with my dad and get a Steam gift card. Enjoy this website!</p>
-        <button class="btn" onclick="showSection('hero')">Go Back</button>
     </section>
 
-    <section id="projects" class="content" style="display: none;">
+    <section id="projects" class="content">
         <h2>Projects</h2>
         <div class="projects">
             <div class="project">
@@ -51,62 +49,51 @@
             </div>
             <div class="project">
                 <h3>Project 4</h3>
-                <p><a href="#" onclick="showSection('tips-and-tricks')">Tips and Tricks for FPS. Enjoy!</a></p>
+                <p><a href="tips-and-tricks.html">Tips and Tricks for FPS. Enjoy!</a></p>
             </div>
         </div>
-        <button class="btn" onclick="showSection('hero')">Go Back</button>
     </section>
 
-    <section id="tips-and-tricks" class="content" style="display: none;">
-        <h2>Tips and Tricks for FPS</h2>
-        <p>Here's a video that shows you ten methods to improve your FPS:</p>
-        <button class="btn" onclick="showVideo()">Watch Video</button>
-        <button class="btn" onclick="showSection('hero')">Go Back</button>
-    </section>
-
-    <section id="contact" class="content" style="display: none;">
+    <section id="contact" class="content">
         <h2>Contact</h2>
         <p>You can reach me at: <a href="mailto:Antoniocay736@gmail.com">Antoniocay736@gmail.com</a></p>
         <p>You can also reach me at: <a href="https://www.youtube.com/@AntonioCay/featured" target="_blank">YouTube Channel</a></p>
-        <button class="btn" onclick="showSection('hero')">Go Back</button>
     </section>
 
     <footer>
         <p>&copy; 2024 Anthony. All rights reserved.</p>
     </footer>
 
-    <!-- Modal for YouTube Video -->
-    <div id="videoModal" class="modal" style="display: none;">
+    <!-- Modal for Tips and Tricks -->
+    <div id="tipsModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeVideo()">&times;</span>
-            <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <span class="close">&times;</span>
+            <h2>Here's a video that shows you ten methods to improve your FPS</h2>
+            <a href="https://www.youtube.com/watch?v=SSCghp40ydk&t=7s" target="_blank">Watch the Video</a>
         </div>
     </div>
 
     <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-            document.getElementById(sectionId).style.display = 'block';
-        }
+        document.getElementById('learnMoreBtn').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = '#projects';
+        });
 
-        function showVideo() {
-            document.getElementById('videoModal').style.display = 'block';
-            document.getElementById('videoFrame').src = "https://www.youtube.com/embed/SSCghp40ydk?t=7s";
-        }
+        var modal = document.getElementById("tipsModal");
+        var span = document.getElementsByClassName("close")[0];
 
-        function closeVideo() {
-            document.getElementById('videoModal').style.display = 'none';
-            document.getElementById('videoFrame').src = "";
+        document.querySelector("a[href='tips-and-tricks.html']").addEventListener('click', function(event) {
+            event.preventDefault();
+            modal.style.display = "block";
+        });
+
+        span.onclick = function() {
+            modal.style.display = "none";
         }
 
         window.onclick = function(event) {
-            const modal = document.getElementById('videoModal');
             if (event.target == modal) {
                 modal.style.display = "none";
-                document.getElementById('videoFrame').src = "";
             }
         }
     </script>
