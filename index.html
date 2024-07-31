@@ -63,39 +63,5 @@
     <footer>
         <p>&copy; 2024 Anthony. All rights reserved.</p>
     </footer>
-
-    <!-- Modal for Tips and Tricks -->
-    <div id="tipsModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Here's a video that shows you ten methods to improve your FPS</h2>
-            <a href="https://www.youtube.com/watch?v=SSCghp40ydk&t=7s" target="_blank">Watch the Video</a>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('learnMoreBtn').addEventListener('click', function(event) {
-            event.preventDefault();
-            window.location.href = '#projects';
-        });
-
-        var modal = document.getElementById("tipsModal");
-        var span = document.getElementsByClassName("close")[0];
-
-        document.querySelector("a[href='tips-and-tricks.html']").addEventListener('click', function(event) {
-            event.preventDefault();
-            modal.style.display = "block";
-        });
-
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 </body>
 </html>
