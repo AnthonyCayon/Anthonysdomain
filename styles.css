@@ -88,14 +88,13 @@ footer {
     padding: 20px;
 }
 
-.video-container {
+.tips-content {
     text-align: center;
     margin: 20px auto;
 }
 
-.video-container iframe {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.go-back {
+    position: absolute;
+    left: 20px;
+    top: 20px;
 }
