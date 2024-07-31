@@ -3,88 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthony's Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Tips and Tricks for FPS</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your external stylesheet -->
 </head>
 <body>
     <header>
-        <h1>Anthony's Personal Website</h1>
+        <h1>Tips and Tricks for FPS</h1>
         <nav>
             <ul>
-                <li><a href="#" onclick="showSection('about')">About Me</a></li>
-                <li><a href="#" onclick="showSection('projects')">Projects</a></li>
-                <li><a href="#" onclick="showSection('tips-and-tricks')">Tips and Tricks for FPS</a></li>
-                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tips-and-tricks.html">Tips and Tricks for FPS</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h2>Welcome to My World</h2>
-            <p>Hello! I'm Anthony. I enjoy playing Hitman and Fortnite, and my favorite foods are seaweed and mac and cheese. I also have a loving family with a dog and a cat. I go to a Catholic school where I worship God. I made this website to spend time with my dad and get a Steam gift card. Enjoy this website!</p>
-            <a href="#" class="btn" onclick="showSection('projects')">Learn More</a>
-        </div>
-    </section>
-
-    <section id="about" class="content" style="display: none;">
-        <h2>About Me</h2>
-        <p>I enjoy playing Hitman and Fortnite, and my favorite foods are seaweed and mac and cheese. I also have a loving family with a dog and a cat. I go to a Catholic school where I worship God. I made this website to spend time with my dad and get a Steam gift card. Enjoy this website!</p>
-        <button class="btn" onclick="showSection('hero')">Go Back</button>
-    </section>
-
-    <section id="projects" class="content" style="display: none;">
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="project">
-                <h3>Project 1</h3>
-                <p><a href="https://www.raidmax.com/v100" target="_blank">Building The PC with my Dad with a Raidmax PC case</a></p>
-            </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p><a href="https://www.ticketsonsale.com/sports/norfolk-tides/69?gad_source=1&gclid=Cj0KCQjws560BhCuARIsAHMqE0FU_PF0pBFOy2Fe5NkWwCoJNiqJ5LBmWYLLXM1rVjd1sOvPjlA_KGAaAtUzEALw_wcB" target="_blank">Spending time with my mom at a baseball game</a></p>
-            </div>
-            <div class="project">
-                <h3>Project 3</h3>
-                <p><a href="https://www.gamestop.com/gift-cards/gaming-gift-cards/products/valve-steam-wallet-card-20/215593.html" target="_blank">Getting a Steam gift card</a></p>
-            </div>
-            <div class="project">
-                <h3>Project 4</h3>
-                <p><a href="#" onclick="showSection('tips-and-tricks')">Tips and Tricks for FPS. Enjoy!</a></p>
-            </div>
-        </div>
-        <button class="btn" onclick="showSection('hero')">Go Back</button>
-    </section>
-
-    <section id="tips-and-tricks" class="content" style="display: none;">
-        <h2>Tips and Tricks for FPS</h2>
-        <p>Here's a video that shows you ten methods to improve your FPS:</p>
-        <div class="video-container">
-            <iframe width="560" height="400" src="https://www.youtube.com/embed/SSCghp40ydk?t=7s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <button class="btn" onclick="showSection('hero')">Go Back</button>
-    </section>
-
-    <section id="contact" class="content" style="display: none;">
-        <h2>Contact</h2>
-        <p>You can reach me at: <a href="mailto:Antoniocay736@gmail.com">Antoniocay736@gmail.com</a></p>
-        <p>You can also reach me at: <a href="https://www.youtube.com/@AntonioCay/featured" target="_blank">YouTube Channel</a></p>
-        <button class="btn" onclick="showSection('hero')">Go Back</button>
-    </section>
+    <main>
+        <section id="tips-and-tricks">
+            <h2>Tips and Tricks for FPS</h2>
+            <p>Here you can find valuable tips and tricks to improve your skills in First-Person Shooter (FPS) games.</p>
+            <ul>
+                <li>Tip 1: Always aim for the head to maximize damage.</li>
+                <li>Tip 2: Use the right weapon for the situation.</li>
+                <li>Tip 3: Learn the maps and know your surroundings.</li>
+                <li>Tip 4: Communicate with your team for better coordination.</li>
+                <li>Tip 5: Practice regularly to improve your reaction time and accuracy.</li>
+            </ul>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 Anthony. All rights reserved.</p>
     </footer>
-
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-            document.getElementById(sectionId).style.display = 'block';
-        }
-    </script>
 </body>
 </html>
