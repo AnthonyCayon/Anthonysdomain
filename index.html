@@ -48,18 +48,30 @@
         <h1>Anthony's Personal Website</h1>
         <nav>
             <ul>
-                <li><a href="#about" class="tab-link" data-tab="about">About Me</a></li>
-                <li><a href="#projects" class="tab-link" data-tab="projects">Projects</a></li>
+                <li><a href="#" class="tab-link" data-tab="learn-more">Learn More</a></li>
+                <li><a href="#" class="tab-link" data-tab="about">About Me</a></li>
+                <li><a href="#" class="tab-link" data-tab="projects">Projects</a></li>
                 <li><a href="tips-and-tricks.html" target="_blank">Tips and Tricks for FPS</a></li>
-                <li><a href="#contact" class="tab-link" data-tab="contact">Contact</a></li>
+                <li><a href="#" class="tab-link" data-tab="contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="tabs">
+        <button data-tab="learn-more" class="tab-button">Learn More</button>
         <button data-tab="about" class="tab-button">About Me</button>
         <button data-tab="projects" class="tab-button">Projects</button>
         <button data-tab="contact" class="tab-button">Contact</button>
+    </section>
+
+    <section id="learn-more" class="tab-content">
+        <div class="hero">
+            <div>
+                <h2>Welcome to My World</h2>
+                <p>Hello! I'm Anthony. I enjoy playing Hitman and Fortnite, and my favorite foods are seaweed and mac and cheese. I also have a loving family with a dog and a cat. I go to a Catholic school where I worship God. I made this website to spend time with my dad and get a Steam gift card. Enjoy this website!</p>
+                <a href="#about" class="btn">Learn More</a>
+            </div>
+        </div>
     </section>
 
     <section id="about" class="tab-content">
@@ -120,7 +132,7 @@
                 });
             });
 
-            // Optionally, you can activate the first tab by default
+            // Activate the "Learn More" tab by default
             tabs[0].click();
         });
     </script>
