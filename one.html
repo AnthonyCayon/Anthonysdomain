@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>EX 8 | Responsive Framework</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+        <div class="pagewrap">
+            <header>
+                <!--Main header area-->
+                <img src="assets/images/Logonew@3x.png" alt="The Angled Anthology" class="logo">
+                <h1></h1>
+                <nav class="topnav" id="myTopnav">
+                    <a href="index.html">Slideshow</a>
+                    <a href="three.html">Three Column</a>
+                    <a href="two.html">Two Column</a>
+                    <a href="one.html" class="current">One Column</a>
+                    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+                </nav>
+            </header>
+            <div class="content">
+                <div class="item1">
+                    <img src="assets/images/NEW1@3x.png" alt="pic 1" class="responsive-image">
+                    <h2>TAP-IN WITH THE PROJECT</h2>
+                    <p>One powerful way to change your perspective on any project is to embrace the beginner's mindset. Approach your task as if you’re learning about it for the first time, with a fresh set of eyes. Set aside your expertise and previous experiences, and open yourself up to new possibilities and ideas. </p> 
+                    <p>Start by asking basic questions about the project, just like a newbie would. Why is this project important? What are its core objectives? What assumptions have we made? By doing this, you can uncover fresh insights and innovative solutions that might be overlooked by an experienced mind. Experiment with techniques or methods you’ve never tried before, even if they seem unconventional. Seek feedback from those who are less familiar with the project—they might spot something you’ve missed. This mindset can spark creativity and lead to breakthroughs that push your project to new heights.</p>
+                    <p><a href="https://youtube.com/shorts/XZxlFaC10oI?si=7ahygsJRaK0o2RCc" class="more-info">Learn new things</a></p>
+                </div>
+            </div>
+            <footer>
+                 <p>“The only thing that is constant is change itself.” — Heraclitus</p>
+            </footer>
+        </div>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+        </script>
+    </body>
+</html>

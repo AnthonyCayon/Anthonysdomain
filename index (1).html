@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Anthony's Personal Page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+       
+        <div class="pagewrap">
+            <header>
+                <!--Main header area-->
+            
+                <h1>Anthony's Personal Page</h1>
+                
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="pexels-tombrand-1637436.jpg" alt="pic 1" style="width:100%;">
+                        <div class="text">Gaming Tips</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="pexels-soumil-kumar-4325-735911.jpg" alt="pic 2" style="width:100%">
+                        <div class="text">Coding Tips</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="pexels-element5-1293265.jpg" alt="pic 3" style="width:100%">
+                        <div class="text">Things I Like</div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+                <div style="text-align:center; margin-bottom: 10px;">
+                    <span class="dot" onclick="currentSlide(1)"></span> 
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                </div>
+            </header>
+            <div class="content-three">
+                <div class="item1">
+                    <h2>Hey I'm Anthony</h2>
+                    <p>Hello! I'm Anthony. I enjoy playing Hitman and Fortnite to name a couple. I enjoy eating and my favorite foods are seaweed and mac and cheese. I  love my family and my pets. I beleive in GOD and being a good person. I made this website to spend time with my dad and learn something new. Enjoy this website! </p> 
+                   <p><a href="https://www.youtube.com/@AntonioCay/featured" class="more-info">My Youtube Channel</a></p>
+                </div>
+                <div class="item2">
+                    <h2>Learning CSS and HTML</h2>
+                    <p>I'm totally into coding right now! My dad's teaching me all about it, and it's way cooler than I thought. We're trying to make a super awesome landing page for me. It's like building a secret hideout online. I'm learning about HTML and CSS, which are basically the building blocks of websites. Dad says I'm a natural, but I think he's just saying that. Can't wait to show it off to everyone when it's done!</p>
+                    
+                    <p><a href="https://youtu.be/salY_Sm6mv4?si=nJqQFczs_wVjoHrG" class="more-info">Learn to Code</a></p>
+                </div>
+                <div class="item3">
+                    <h2>FPS Gaming</h2>
+                    <p>I’m totally obsessed with FPS games! I’ve been playing a bunch and I’ve figured out some cool stuff to help you win. First, aim for the head – it’s a no-brainer. Second, use cover wisely; don’t just run and gun. Third, listen closely; you can hear enemies sneaking up on you. Also, practice makes perfect, so keep playing and you’ll get better. And finally, don’t get too mad if you lose – it happens to everyone!</p>
+                    
+                    <p><a href="https://youtu.be/cdFuGPnqjV0?si=1JwqkP6fXymEv-aw" class="more-info">Tips and Tricks for FPS</a></p>
+                </div>
+            </div>
+            <footer>
+                 <p>Antoniocay736@gmail.com</p>
+            </footer>
+        </div>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+        </script>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}    
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+            }
+        </script>
+    </body>
+</html>
