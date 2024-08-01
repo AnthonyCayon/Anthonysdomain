@@ -79,22 +79,16 @@ footer {
     text-align: center;
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
-.content {
-    padding: 20px;
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-.tips-content {
-    text-align: center;
-    margin: 20px auto;
-}
-
-.go-back {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-}
+.tab-button {
+    background: #
