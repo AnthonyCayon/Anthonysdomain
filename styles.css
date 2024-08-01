@@ -79,46 +79,7 @@ footer {
     text-align: center;
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    position: fixed;
+    position: absolute;
     bottom: 0;
-}
-
-.tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.tab-button {
-    background: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background 0.3s;
-    margin: 0 5px;
-}
-
-.tab-button:hover {
-    background: #555;
-}
-
-.tab-content {
-    display: none;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.content {
-    padding: 20px;
-    margin: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-}
-
-.go-back {
-    float: left;
+    width: 100%;
 }
